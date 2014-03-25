@@ -62,5 +62,7 @@ With student authentication in place it's time to add the functionality needed t
 * Add members to the orgnization
 * Remove members from the organization
 
+The organization page should look similar to the [mockup](mockup.png)
+
 ### Part 4: AJAXify it (Timing ~ 30 min)
 On the page that lists all the organizations, add the form for creating a new organization.  Use AJAX on this form so that when a student adds a new organization, that new organization is appended to the list of organization without refreshing the page.
