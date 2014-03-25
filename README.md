@@ -48,9 +48,19 @@ To be clear, ```presidencies``` and ```organizations``` should return completely
 
 To help you along your way, we recommend reviewing the ActiveRecord documentation, specifically the available options for the association methods you'll be using.
 
+Once your associations have been set up, you should be able to run ```bundle exec rake db:seed``` without any errors.  This will populate the data for you.
+
 ### Part 3: CRUD It Up (Timing ~ 45 min)
 
-With student authentication in place, create pages which let the student create new events, show their created events, edit events, and destroy events.
+With student authentication in place it's time to add the functionality needed to manage organizations. As a user to the application, you must be able to do the following:
+
+* View all organizations
+* Create a new organization
+* Edit an organization
+* Delete an organization
+* Assign a president to an organization
+* Add members to the orgnization
+* Remove members from the organization
 
 ### Part 4: AJAXify it (Timing ~ 30 min)
-On the page that lists all the events created by the student, add the form for creating a new event.  Use AJAX on this form so that when a student adds a new event, that new event is appended to the list of created events without refreshing the page.
+On the page that lists all the organizations, add the form for creating a new organization.  Use AJAX on this form so that when a student adds a new organization, that new organization is appended to the list of organization without refreshing the page.
