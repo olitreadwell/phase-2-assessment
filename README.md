@@ -29,8 +29,10 @@ Create views to allow a student to:
 2. Log in as an existing student
 3. Log out as an existing student
 
-### Part 2: Events  (Timing ~ 30 min)
-We have students and events.  Students can attend many events and an event can be attended by many students.  Events are student-created, too, so an event belongs to a student and a student can create multiple events.
+### Part 2: Organizations  (Timing ~ 30 min)
+We have students and organizations.
+* Students can be members of many organizations.
+* Organizations need leadership, so an organization belongs to president.
 
 #### Associations
 
@@ -38,11 +40,11 @@ We've already defined the three models for you.  You'll need to create the assoc
 
 The `Student` model should have two associations on it:
 
-1. ``student.created_events
-`` should return the list of events created by the student
-2. ``student.attended_events`` should return the list of events the student is attending or has attended
+1. ``student.presidencies
+`` should return the list of organization led by the student
+2. ``student.organizations`` should return the list of organization the student is a member, but not a leader
 
-To be clear, ```created_events``` and ```attended_events``` should return completely different results (we are not asking you to create an alias).
+To be clear, ```presidencies``` and ```organizations``` should return completely different results (we are not asking you to create an alias).
 
 To help you along your way, we recommend reviewing the ActiveRecord documentation, specifically the available options for the association methods you'll be using.
 
