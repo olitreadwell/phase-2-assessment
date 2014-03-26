@@ -44,7 +44,7 @@ The `Student` model should have two associations on it:
 `` should return the list of organization led by the student
 2. ``student.organizations`` should return the list of organization the student is a member, but not a leader
 
-To be clear, ```presidencies``` and ```organizations``` should return completely different results (we are not asking you to create an alias).
+To be clear, ```presidencies``` and ```organizations``` should return completely different results.
 
 To help you along your way, we recommend reviewing the ActiveRecord documentation, specifically the available options for the association methods you'll be using.
 
