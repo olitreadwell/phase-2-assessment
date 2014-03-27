@@ -38,13 +38,18 @@ We have students and organizations.
 
 We've already defined the three models for you.  You'll need to create the associations between them.
 
-The `Student` model should have two associations on it:
+The `Student` model should have:
 
 1. ``student.presidencies
 `` should return the list of organization led by the student
 2. ``student.organizations`` should return the list of organization the student is a member, but not a leader
 
 To be clear, ```presidencies``` and ```organizations``` should return completely different results.
+
+The `Organization` model should have:
+
+1. ``organization.president`` should return the student that is leading the organization
+2. ``organization.members`` should return a list of members
 
 To help you along your way, we recommend reviewing the ActiveRecord documentation, specifically the available options for the association methods you'll be using.
 
@@ -54,15 +59,16 @@ Once your associations have been set up, you should be able to run ```bundle exe
 
 With student authentication in place it's time to add the functionality needed to manage organizations. As a user to the application, you must be able to do the following:
 
-* View all organizations
-* Create a new organization
-* Edit an organization
-* Delete an organization
-* Assign a president to an organization
-* Add members to the orgnization
-* Remove members from the organization
+#### Minimum
 
-The organization page should look similar to the [mockup](mockup.png)
+* View all organizations
+* View a single organization; the organization page should look similar to the [mockup](mockup.png)
+* Create a new organization
+* Delete an organization
+
+#### Stretch
+
+* Edit
 
 ### Part 4: AJAXify it (Timing ~ 30 min)
 On the page that lists all the organizations, add the form for creating a new organization.  Use AJAX on this form so that when a student adds a new organization, that new organization is appended to the list of organization without refreshing the page.
