@@ -10,8 +10,8 @@ gem 'sinatra-contrib'
 # Use Thin for our web server
 gem 'thin'
 
-gem 'activesupport', '~> 3.2.13'
-gem 'activerecord', '~> 3.2.13'
+gem 'activesupport', '~> 4.1'
+gem 'activerecord', '~> 4.1'
 
 gem 'rake'
 
