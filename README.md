@@ -53,7 +53,9 @@ The `Organization` model should have:
 
 To help you along your way, we recommend reviewing the ActiveRecord documentation, specifically the available options for the association methods you'll be using.
 
-Once your associations have been set up, you should be able to run ```bundle exec rake db:seed``` without any errors.  This will populate the data for you.
+**Note**: Before you move on to Part 3, be sure your associations are working as expected. Try `rake console` for testing.
+
+Once your associations have been set up, you should be able to run `bundle exec rake db:seed` without any errors.  This will populate the data for you.
 
 ### Part 3: CRUD It Up (Timing ~ 45 min)
 
