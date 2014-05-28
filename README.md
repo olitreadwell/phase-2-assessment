@@ -40,16 +40,15 @@ We've already defined the three models for you.  You'll need to create the assoc
 
 The `Student` model should have:
 
-1. ``student.presidencies
-`` should return the list of organization led by the student
-2. ``student.organizations`` should return the list of organization the student is a member, but not a leader
+1. `student.presidencies` should return the list of organization led by the student
+2. `student.organizations` should return the list of organization the student is a member, but not a leader
 
-To be clear, ```presidencies``` and ```organizations``` should return completely different results.
+To be clear, `presidencies` and `organizations` should return completely different results.
 
 The `Organization` model should have:
 
-1. ``organization.president`` should return the student that is leading the organization
-2. ``organization.members`` should return a list of members
+1. `organization.president` should return the student that is leading the organization
+2. `organization.members` should return a list of members
 
 To help you along your way, we recommend reviewing the ActiveRecord documentation, specifically the available options for the association methods you'll be using.
 
