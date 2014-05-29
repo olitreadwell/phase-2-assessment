@@ -4,14 +4,12 @@
 
 }
 
-html{
-    height: 100%;
-}
+./*.  this period makes my height work? double you tee eff*/
 
-body{
-    height: 100%;
-}
 
+html, body{
+     height: 100%;
+}
 
 .container {
   margin: auto;
@@ -25,7 +23,6 @@ body{
 
 .login_form{
     position: relative;
-
     padding-left: 15%;
     margin-top: 10%;
 }

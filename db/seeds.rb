@@ -7,7 +7,7 @@ require 'faker'
     last_name:             Faker::Name.last_name,
     email:                 Faker::Internet.email,
     bio:                   Faker::Lorem.paragraph(8),
-    image_url:             "http://placekitten/g/300/300",
+    image_url:             "http://placekitten.com/g/300/300",
     password:              "12345678",
     password_confirmation: "12345678"
   )

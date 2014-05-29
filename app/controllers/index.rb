@@ -1,8 +1,8 @@
 get '/' do
     #These are params if there was an error (otherwise nil)
     # session.clear
-    # @login_error = params[:params_login]
-    # @register_error = params[:params_registration]
+    @login_error = params[:params_login]
+    @register_error = params[:params_registration]
   erb :index
 end
 
@@ -52,8 +52,40 @@ end
 get '/students/:id' do
     @student = Student.find_by_id(session[:student_id])
     @first_name = @student.first_name
+    @organizations = Organization.all
     erb :student_home
 end
 
+get '/organizations/new' do
+    @org_creation_error = params[:params_org_creation]
+    @organization = Organization.find_by_id(params[:organization_id])
+    if request.xhr?
+        content_type :json  # tells the client the server is responding with JSON
+        current_student.to_json
+      else
+        erb :create_organization
+      end
+end
 
+post '/organizations/new' do
+    @organization = Organization.new(name: params[:organization_name],
+                                                                description: params[:organization_description],
+                                                                president_id: current_student.id)
+    @organization.save
+    if @organization.valid?
+        redirect to "/organizations/#{@organization.id}"
+    else
+        redirect to "/organizations/new?params_org_creation=There was an error creating your organization"
+    end
+end
 
+delete "/organizations/delete/:organization_id" do  # Delete
+    @organization = Organization.find_by_id(params[:organization_id])
+    @organization.delete
+    redirect "/students/#{current_student.id}"
+end
+
+get '/organizations/:organization_id' do
+    @organization = Organization.find_by_id(params[:organization_id])
+    erb :show_organization
+end

@@ -1,0 +1,10 @@
+<h2>Create new Organization</h2>
+    <form class="form" action="/organizations/new" method="post">
+      <label>Name:<input type="text" name="organization_name" placeholder="your org's name"><br></label>
+      <label>Description:<textarea name="organization_description" id="" cols="30" rows="10" placeholder="your org's info"></textarea><br></label>
+      <input type="submit" value="Create">
+      <% if @org_creation_error %>
+        <small style="color:red">Organization Creation Error.</small>
+      <% end %>
+</form>
+

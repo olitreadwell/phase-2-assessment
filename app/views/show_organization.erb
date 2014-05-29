@@ -1,0 +1,36 @@
+<h2><%=@organization.name%></h2>
+<div id="about">
+  <div id="description">
+      <%=@organization.description%>
+  </div>
+  <div id="president">
+      <div class="image">
+        <img src="<%=@organization.president.image_url%>" alt="Our Beloved President">
+      </div>
+      <div id="prez_header">
+          <h3>
+              Our President:<%=@organization.president.first_name%> <%=@organization.president.last_name%>
+          </h3>
+          <div id="prez_profile">
+            President Bio:<%=@organization.president.bio%>
+          </div>
+      </div>
+  </div>
+</div>
+<div id="memberships">
+    <h3>Our Members</h3>
+    <% @organization.members.each do |member| %>
+        <div class="member">
+            <div class="image">
+                <img src="<%=member.image_url%>" alt="Our Fav">
+            </div>
+            <div class="member_inf"><%=member.first_name%> <%=member.last_name%></div>
+        </div>
+    <% end %>
+</div>
+<% if @organization.president.id == current_student.id %>
+    <form method="post" action="/organizations/delete/<%=@organization.id%>">
+        <input type="hidden" name="_method" value="delete">
+        <input type="submit" value="Delete this Organization">
+    </form>
+<%  end %>

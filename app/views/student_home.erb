@@ -1,5 +1,17 @@
 <h2><%=@first_name%> home page</h2>
+    <div><a id="create_org" href="/organizations/new">Create a New Organization</a></div>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+    <th>President</th>
+  </tr>
+    <%@organizations.each do |organization|%>
+  <tr>
+    <td><a href="/organizations/<%=organization.id%>"><%=organization.name%></a></td>
+    <td><%=organization.description%></td>
+    <td><%=organization.president.first_name%> <%=organization.president.last_name%></td>
+    <%end%>
+  </tr>
+</table>
 
-<!-- <form method="post" action="/users/logout">
-  <input type="submit" value="Logout">
-</form> -->
