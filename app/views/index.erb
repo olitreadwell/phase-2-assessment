@@ -1,1 +1,31 @@
-<h1>Index Page</h1>
+<div id="sign-in">
+  <div class="login_form">
+  <h2>Login</h2>
+    <form class="form" action="/login" method="post">
+      <label>Email:<input type="text" name="email" placeholder="Email"><br></label>
+      <label>Password:<input type="password" name="password" placeholder="Password"><br></label>
+      <input type="submit" value="Login">
+      <% if @login_error %>
+        <small style="color:red">Login Error.</small>
+      <% end %>
+    </form>
+  </div>
+
+  <div class="register_form">
+  <h2>Registration</h2>
+    <form class="form" action="/register" method="post">
+      <label>First Name:<input type="text" name="first_name" placeholder="Jane"><br></label>
+      <label>Last Name:<input type="text" name="last_name" placeholder="Doe"><br></label>
+      <label>Your Profile Pic's URL:<input type="text" name="image_url" placeholder="http://placekitten/g/300/300"><br></label>
+      <label>Email:<input type="text" name="email" placeholder="Enter your Email"><br></label>
+      <label>Password:<input type="password" name="password" placeholder="Choose a Password"><br></label>
+      <label>Password Confirmation:<input type="password" name="password_confirmation" placeholder="Confirm your Password"><br></label>
+      <input type="submit" value="Register">
+      <% if @register_error %>
+        <small style="color:red">Registration Error.</small>
+      <% end %>
+    </form>
+      <div id="errors"></div>
+  </div>
+</div>
+
