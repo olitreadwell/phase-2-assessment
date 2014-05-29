@@ -1,6 +1,17 @@
 require 'bcrypt'
 class Student < ActiveRecord::Base
   include BCrypt
+
+  has_many :memberships
+  has_many :organizations, through: :memberships #student.organizations should return the list of organization the student is a member, but not a leader
+
+  has_many :presidencies, class_name: "Organization", foreign_key: "president_id" #student.presidencies should return the list of organization led by the student
+
+
+
+
+
+
   validates :email, presence: true,#,
                           format: { with: /.+\@.+\..+/,
                                         message: "That is not the proper email format" },
