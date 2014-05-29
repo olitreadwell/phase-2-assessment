@@ -20,20 +20,20 @@ post '/login' do
 end
 
 post '/register' do
-    first_name = params[:first_name]
-    last_name = params[:last_name]
-    image_url = params[:image_url]
-    email = params[:email]
-    password = params[:password]
-
-    if Student.find_by_email(email)
-        redirect to '/?params_registration=There was an error with registration'
-    else
-        @student = Student.create(first_name: first_name,
-                                                       last_name: last_name,
-                                                       image_url: image_url,
-                                                       email: email)
-        @student.password = password
+    # first_name = params[:first_name]
+    # last_name = params[:last_name]
+    # image_url = params[:image_url]
+    # email = params[:email]
+    # password = params[:password]
+    p params
+    # if Student.find_by_email(email)
+    #     redirect to '/?params_registration=There was an error with registration'
+    # else
+        @student = Student.new(first_name: params[:first_name],
+                                            last_name: params[:last_name],
+                                            image_url: params[:image_url],
+                                            email: params[:email])
+        @student.password = params[:password_confirmation]
         @student.save
         if @student.save
             session[:student_id] = @student.id
@@ -41,9 +41,13 @@ post '/register' do
         else
             redirect to '/?params_registration=There was an error with registration'
         end
-    end
+    # end
 end
 
+get '/students/logout' do
+    session.clear
+    redirect '/'
+end
 
 get '/students/:id' do
     @student = Student.find_by_id(session[:student_id])
@@ -51,9 +55,5 @@ get '/students/:id' do
     erb :student_home
 end
 
-post '/students/logout' do
-    session.clear
-    redirect '/'
-end
 
 
